@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nuevaindiapp</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body class="splash">
+  <div class="splash-content">
+    <img src="logo.png" alt="Nuevaindiapp Logo" class="splash-logo"/>
+  </div>
+
+  <main>
+    <h1>📅 Agenda de Serviços</h1>
+    <form id="task-form">
+      <input type="date" id="data" required>
+      <input type="text" id="atividade" placeholder="Atividade" required>
+      <input type="text" id="responsavel" placeholder="Responsável" required>
+      <select id="status">
+        <option value="a_fazer">A Fazer</option>
+        <option value="em_andamento">Em Andamento</option>
+        <option value="concluido">Concluído</option>
+      </select>
+      <select id="prioridade">
+        <option value="baixa">Baixa</option>
+        <option value="media">Média</option>
+        <option value="alta">Alta</option>
+      </select>
+      <textarea id="observacoes" placeholder="Observações..."></textarea>
+      <input type="file" id="fotos" multiple accept="image/*">
+      <button type="submit">Adicionar Tarefa</button>
+    </form>
+    <section id="lista-tarefas"></section>
+  </main>
+
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => document.body.classList.remove('splash'), 1500);
+    });
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
